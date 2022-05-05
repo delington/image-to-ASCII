@@ -10,11 +10,12 @@ public class Properties {
     final static String ASCII_CHARS_STRING2 = " .:-=+*#%@";
     final static List<String> ASCII_CHARS = getListOfCharacters(ASCII_CHARS_STRING2);
     final static int ASCII_CHARS_SIZE = ASCII_CHARS.size();
-    final static String INPUT_FILE_PATH = "B:\\git\\samples\\image-to-ASCII\\src\\main\\resources\\greyscale.jpg";
-    final static String INPUT_FILE_PATH_IMAGE = "B:\\git\\samples\\image-to-ASCII\\src\\main\\resources\\image.jpeg";
+                    
+    final static String INPUT_FILE_PATH = "D:\\development\\image-to-ASCII\\src\\main\\resources\\greyscale.jpg";
+    final static String INPUT_FILE_PATH_IMAGE = "D:\\development\\image-to-ASCII\\src\\main\\resources\\image.jpeg";
     final static String OUTPUT_FILE_PATH = "image-to-ASCII/src/main/resources/sample.txt";
 
-    public static final String CUSTOM_FONT_PATH = "B:\\git\\samples\\image-to-ASCII\\src\\main\\resources\\Anonymous.ttf";
+    public static final String CUSTOM_FONT_PATH = "D:\\development\\image-to-ASCII\\src\\main\\resources\\consola.ttf";
 
     public static final int FONT_SIZE = 15;
 
