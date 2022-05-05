@@ -45,7 +45,7 @@ public class Main extends Application {
 //            final var writer = new FileWriter(OUTPUT_FILE_PATH);
 //            ImageProcessor.writeGreyScaleValue(myPicture, writer);
 
-            final var resizedImage = ImageProcessor.resizeImage(myPicture, 80);
+            final var resizedImage = ImageProcessor.resizeImage(myPicture, 80, 40);
             ImageProcessor.writeGreyScaleValueToDisplay(resizedImage);
         } catch (IOException e) {
             throw new RuntimeException(e);

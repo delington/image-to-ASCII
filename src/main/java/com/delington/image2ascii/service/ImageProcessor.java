@@ -22,8 +22,8 @@ public class ImageProcessor {
     }
 
     public static void writeGreyScaleValue(BufferedImage myPicture, FileWriter writer) throws IOException {
-        for (int x = 0; x < myPicture.getWidth(); x++) {
-            for (int y = 0; y < myPicture.getHeight(); y++) {
+        for (int y = 0; y < myPicture.getHeight(); y++) {
+            for (int x = 0; x < myPicture.getWidth(); x++) {
                 //Retrieving contents of a pixel
                 int pixel = myPicture.getRGB(x, y);
 
@@ -42,11 +42,13 @@ public class ImageProcessor {
     }
 
     public static void writeGreyScaleValueToDisplay(BufferedImage myPicture) {
-        for (int x = 0; x < myPicture.getWidth(); x++) {
+        
+        for (int y = 0; y < myPicture.getHeight(); y++) {
 
             StringBuilder text = new StringBuilder();
+            
 
-            for (int y = 0; y < myPicture.getHeight(); y++) {
+            for (int x = 0; x < myPicture.getWidth(); x++) {
                 //Retrieving contents of a pixel
                 int pixel = myPicture.getRGB(x, y);
 
@@ -59,7 +61,9 @@ public class ImageProcessor {
                 final int grayValueAsInteger = (int) (grayScalePixelValue);
                 text.append(strChar(grayValueAsInteger));
             }
+            
             ImGui.text(text.toString() + "\n");
+            //System.out.println(text.toString());
         }
     }
 
