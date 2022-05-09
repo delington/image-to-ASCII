@@ -12,13 +12,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import static com.delington.image2ascii.Properties.FONT_PATH_ANONYMUS;
-import static com.delington.image2ascii.Properties.FONT_PATH_CONSOLA;
-import static com.delington.image2ascii.Properties.FONT_PATH_CONSOLAB;
+import static com.delington.image2ascii.Properties.FONT_ANONYMUS;
 import static com.delington.image2ascii.Properties.FONT_SIZE;
-import static com.delington.image2ascii.Properties.INPUT_FILE_PATH_IMAGE;
+import static com.delington.image2ascii.Properties.INPUT_IMAGE;
 
 public class Main extends Application {
+
+    public static void main(String[] args) throws IOException {
+        launch(new Main());
+    }
 
     @Override
     protected void configure(Configuration config) {
@@ -30,7 +32,7 @@ public class Main extends Application {
         fontConfig.setGlyphRanges(fontAtlas.getGlyphRangesDefault());
 
         fontConfig.setPixelSnapH(true);
-        fontAtlas.addFontFromFileTTF(FONT_PATH_ANONYMUS, FONT_SIZE, fontConfig);
+        fontAtlas.addFontFromFileTTF(Utils.prepareFontPath(FONT_ANONYMUS), FONT_SIZE, fontConfig);
 
         fontConfig.destroy();
     }
@@ -39,16 +41,12 @@ public class Main extends Application {
     public void process() {
         BufferedImage myPicture;
         try {
-            myPicture = ImageIO.read(new File(INPUT_FILE_PATH_IMAGE));
+            myPicture = ImageIO.read(new File(Utils.getAbsoluteFilePath(INPUT_IMAGE)));
 
             final var resizedImage = ImageProcessor.resizeImage(myPicture, 80, 40);
             ImageProcessor.writeGreyScaleValueToDisplay(resizedImage);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static void main(String[] args) throws IOException {
-        launch(new Main());
     }
 }

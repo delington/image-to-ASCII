@@ -88,4 +88,32 @@ public class ImageProcessor {
         }
         return mappedCharacter;
     }
+
+    // Used at grayscale.jpg
+    private static String strCharReverse(int greyScaleValue) {
+        String mappedCharacter = " ";
+
+        if (greyScaleValue >= 230) {
+            mappedCharacter = " ";
+        } else if (greyScaleValue >= 200) {
+            mappedCharacter = ".";
+        } else if (greyScaleValue >= 180) {
+            mappedCharacter = ":";
+        } else if (greyScaleValue >= 150) {
+            mappedCharacter = "-";
+        } else if (greyScaleValue >= 130) {
+            mappedCharacter = "=";
+        } else if (greyScaleValue >= 100) {
+            mappedCharacter = "+";
+        } else if (greyScaleValue >= 75) {
+            mappedCharacter = "*";
+        } else if (greyScaleValue >= 50) {
+            mappedCharacter = "#";
+        } else if (greyScaleValue >= 25) {
+            mappedCharacter = "%";
+        } else {
+            mappedCharacter = "@";
+        }
+        return mappedCharacter;
+    }
 }
