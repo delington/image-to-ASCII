@@ -6,13 +6,11 @@ This is a small project aiming to convert a .jpg image to an image drawn with on
 
 - input -> output:
 
-<img src="img/input.jpg" height="300" width="300"/>
-<img src="img/output.png" height="300" width="300"/>
+<img src="img/input.jpg" height="300" width="300"/> <img src="img/output.png" height="300" width="300"/>
 
 ---
 
-<img src="img/input2.jpg" height="300" width="300"/>
-<img src="img/output2.png" height="300" width="300"/>
+<img src="img/input2.jpg" height="300" width="300"/> <img src="img/output2.png" height="300" width="300"/>
 
 # References
 
